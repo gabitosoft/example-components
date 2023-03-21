@@ -2,8 +2,11 @@ import { Layout, Space, Row, Col } from 'antd'
 
 import ListPizza from './components/ListPizza'
 import SignIn from './components/SignIng/SignIn'
-import SideMenu from './components/SideMenu'
+import SideMenu from './components/SideMenu/SideMenu'
 import AppHeader from './components/AppHeader/AppHeader'
+
+import { useContext } from 'react'
+import { ThemeContext } from './contexts/ThemeContext'
 
 import './App.css'
 
@@ -14,10 +17,12 @@ function displayYear() {
 }
 
 function App() {
+  const { contextTheme } = useContext(ThemeContext)
+
   return (
     <Space direction="vertical" className="App-space">
       <Layout>
-        <Header className="App-header">
+        <Header className="App-header" style={{ backgroundColor: contextTheme.background }}>
           <AppHeader />
         </Header>
         <Layout>
