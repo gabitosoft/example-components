@@ -1,12 +1,16 @@
-import { Layout, Space, Row, Col } from 'antd'
+import { Layout, Space } from 'antd'
 
-import ListPizza from './components/ListPizza'
-import SignIn from './components/SignIng/SignIn'
 import SideMenu from './components/SideMenu/SideMenu'
 import AppHeader from './components/AppHeader/AppHeader'
 
 import { useContext } from 'react'
 import { ThemeContext } from './contexts/ThemeContext'
+
+import { Routes, Route } from 'react-router-dom'
+
+import Pizza from './views/Pizza'
+import Home from './views/Home'
+import Topping from './views/Topping'
 
 import './App.css'
 
@@ -30,17 +34,11 @@ function App() {
             <SideMenu />
           </Sider>
           <Content className="App-content">
-            <Row>
-              <Col span={6}>
-                <ListPizza />
-              </Col>
-              <Col span={12}>
-                <img className="App-image-content" alt="Pizza Menu" src="./assets/pizza-menu.jpg"/>
-              </Col>
-              <Col span={6}>
-                <SignIn />
-              </Col>
-            </Row>
+            <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/pizzas" element={<Pizza />}/>
+              <Route path="/toppings" element={<Topping />}/>
+            </Routes>
           </Content>
         </Layout>
         <Footer className="App-footer">UMSS &copy; {displayYear()}</Footer>

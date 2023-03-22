@@ -1,13 +1,15 @@
 import { Menu } from 'antd'
 import { useContext } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
+import { Link } from 'react-router-dom'
 
 import './SideMenu.css'
 
 const items = [
-  { key: 1, label: 'Pizzas' },
-  { key: 2, label: 'Tamanos' },
-  { key: 3, label: 'Ingredientes' }
+  { key: 0, label: (<Link to="/">Home</Link>)},
+  { key: 1, label: (<Link to="/pizzas">Pizzas</Link>)},
+  { key: 2, label: (<Link to="/toppings">Ingredientes</Link>) },
+  { key: 3, label: 'Tamanos' }
 ]
 
 function SideMenu(props) {
