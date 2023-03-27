@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-const store = configureStore({
-  reducer: {}
+import pizzasReducer from './../features/pizzas/pizzaSlice'
+
+export const store = configureStore({
+  reducer: {
+    pizzas: pizzasReducer
+  }
 })
 
-export default store

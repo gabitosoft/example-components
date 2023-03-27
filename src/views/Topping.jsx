@@ -1,5 +1,5 @@
 export default function Topping() {
   return (
-    <h1>Topping Page</h1>
+    <h1>Pagina Ingredientes</h1>
   )
 }

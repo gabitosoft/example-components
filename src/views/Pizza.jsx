@@ -1,5 +1,16 @@
+import { Layout } from 'antd'
+import ListPizza from './../components/ListPizza' 
+import FormPizza from '../components/Pizza/FormPizza'
+
+const { Content } = Layout
+
 export default function Pizza() {
   return (
-    <h1>Pizza Page</h1>
+    <Layout>
+      <Content>
+        <FormPizza />
+        <ListPizza />
+      </Content>
+    </Layout>
   )
 }
